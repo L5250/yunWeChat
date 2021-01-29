@@ -1,0 +1,36 @@
+<mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+  <view class="page__bd">
+    <mp-form id="form" rules="{{rules}}" models="{{formData}}">
+      <mp-cells>
+        <mp-cell ext-class="">
+          <mp-uploader bindfail="uploadError" bindsuccess="uploadSuccess" binddelete="uploadDelete" delete="{{true}}"
+            select="{{selectFile}}" upload="{{uplaodFile}}" files="{{files}}" max-count="9" title="图片上传" tips="图片上传提示">
+          </mp-uploader>
+        </mp-cell>
+      </mp-cells>
+      <mp-cells title="基本信息" footer="">
+        <mp-cell prop="name" title="名字" ext-class="">
+          <input bindinput="formInputChange" data-field="name" class="weui-input" placeholder="请输入名字" />
+        </mp-cell>
+        <mp-cell prop="price" title="价格" ext-class="weui-cell_vcode">
+          <input bindinput="formInputChange" data-field="price" class="weui-input" placeholder="请输入价格" type="number" />
+          <view slot="footer" class="weui-vcode-btn">元</view>
+        </mp-cell>
+        <mp-cell prop="amount" title="库存" ext-class="weui-cell_vcode">
+          <input bindinput="formInputChange" data-field="amount" class="weui-input" placeholder="请输入库存" type="number" />
+          <view slot="footer" class="weui-vcode-btn">件</view>
+        </mp-cell>
+      </mp-cells>
+
+      <mp-cells title="商品描述" footer="">
+        <mp-cell prop="desc">
+          <input bindinput="formInputChange" data-field="desc" class="weui-input" placeholder="请输入商品描述" />
+        </mp-cell>
+      </mp-cells>
+    </mp-form>
+    <view class="weui-btn-area">
+      <button class="weui-btn" type="primary" bindtap="submitForm">确定</button>
+    </view>
+  </view>
+</view>

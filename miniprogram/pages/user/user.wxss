@@ -1,0 +1,37 @@
+/* pages/user/user.wxss */
+.header_font{
+  font-size: small;
+}
+
+/* 功能按钮样式 */
+.box {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.box_item {
+  width: 33.3%;
+}
+
+.box_item_btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20rpx;
+}
+
+.box_item_hover {
+  background: "#eee";
+}
+
+.icon {
+  width: 75rpx;
+  height: 75rpx;
+}
+
+/* 标题字体 */
+.title_font {
+  margin-top: 20rpx;
+}

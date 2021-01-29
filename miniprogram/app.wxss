@@ -1,0 +1,26 @@
+page {
+  background: #eee;
+}
+
+view,
+text {
+  box-sizing: border-box;
+}
+
+/* 布局样式 */
+.layout {
+  background: #fff;
+  margin: 20rpx;
+  padding: 20rpx;
+  border-radius: 20rpx;
+}
+
+.header {
+  padding: 20rpx;
+}
+
+.content {
+  height: 100%;
+  width: 100%;
+}
+

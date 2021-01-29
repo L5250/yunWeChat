@@ -1,0 +1,31 @@
+.home {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20rpx;
+}
+
+.goods {
+  padding: 10rpx;
+  width: 50%;
+}
+
+.home_layout {
+  margin: 0;
+}
+
+/* 商品图片 */
+.goods_img {
+  width: 100%;
+  height: 300rpx;
+}
+
+/* 商品名字 */
+.goods_name {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  white-space: normal !important;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}

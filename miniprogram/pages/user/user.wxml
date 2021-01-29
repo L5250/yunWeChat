@@ -1,0 +1,18 @@
+<view class="user">
+  <view class="layout">
+    <view class="header"><text class="header_font">基础功能</text></view>
+    <view class="content">
+      <view class="box">
+        <!-- 基础功能 -->
+        <view wx:for="{{basicData}}" wx:key="url" class="box_item" hover-class="box_item_hover" bindtap="addGoods"
+          data-url="{{item.url}}">
+          <view class="box_item_btn">
+            <image class="icon" src="{{item.imgUrl}}"></image>
+            <text class="title_font">{{item.name}}</text>
+          </view>
+        </view>
+        <!-- 基础功能 -->
+      </view>
+    </view>
+  </view>
+</view>

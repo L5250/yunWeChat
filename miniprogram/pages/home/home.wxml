@@ -1,0 +1,15 @@
+<view class="home">
+  <view wx:for="{{goodsData}}" wx:key="id" data-id="{{item.id}}" bindtap="goDetail" class="goods">
+    <view class="layout home_layout">
+      <view class="header"> </view>
+      <view class="content">
+        <view>
+          <image class="goods_img" mode="aspectFill" src="{{item.imgUrl}}" />
+          <view class="goods_name"><text>{{item.name}}</text></view>
+          <view>{{item.price}}</view>
+          <view>{{item.amount}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
