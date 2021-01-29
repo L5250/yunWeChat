@@ -59,6 +59,7 @@ CustomPage({
 
   },
   formInputChange(e) {
+
     const {
       field
     } = e.currentTarget.dataset
@@ -102,6 +103,7 @@ CustomPage({
           name: this.data.formData.name,
           price: Number(this.data.formData.price),
           amount: Number(this.data.formData.amount),
+          desc: this.data.formData.desc,
           fileList: this.data.files
         }
 
@@ -121,29 +123,35 @@ CustomPage({
             console.log(res.fileID)
             fileCloudList.push(res.fileID)
             tasks.push(promise)
+
+            addGoods()
           })
         })
 
-        Promise.all(tasks).then(res => {
-          console.log(params, fileCloudList);
-          wx.hideLoading()
-          return
-          wx.cloud.callFunction({
-            name: "goods",
-            data: {
-              action: "add",
-              ...params,
-              fileList: fileCloudList
-            }
-          }).then(res => {
-            console.log(res)
-            wx.showToast({
-              title: '新增商品成功'
+        async function addGoods() {
+          await Promise.all(tasks).then(res => {
+            wx.hideLoading()
+            wx.cloud.callFunction({
+              name: "goods",
+              data: {
+                action: "add",
+                ...params,
+                fileList: fileCloudList
+              }
+            }).then(res => {
+              console.log(res)
+              wx.showToast({
+                title: '新增商品成功'
+              })
+              wx.switchTab({
+                url: '/pages/user/user',
+              })
             })
           })
-        })
-        return
+        }
       }
+
+      // 
     })
   },
 

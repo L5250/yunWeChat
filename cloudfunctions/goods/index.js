@@ -55,7 +55,6 @@ async function getGoods(event) {
 }
 //新增
 async function addGoods(event) {
-  console.log(event);
   goods.add({
     data: {
       name: event.name,

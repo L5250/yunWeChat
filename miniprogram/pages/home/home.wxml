@@ -4,7 +4,7 @@
       <view class="header"> </view>
       <view class="content">
         <view>
-          <image class="goods_img" mode="aspectFill" src="{{item.imgUrl}}" />
+          <image class="goods_img" mode="aspectFill" src="{{item.fileList[0]}}" />
           <view class="goods_name"><text>{{item.name}}</text></view>
           <view>{{item.price}}</view>
           <view>{{item.amount}}</view>

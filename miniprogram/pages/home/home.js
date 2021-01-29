@@ -19,19 +19,19 @@ Page({
     })
 
     // 获取数据
-    // wx.cloud.callFunction({
-    //   name: "goods",
-    //   data: {
-    //     action: "getData"
-    //   }
-    // }).then(res => {
-    //   console.log(res);
-    //   this.setData({
-    //     goodsData: res.result.data
-    //   })
-    // }).catch(err => {
-    //   console.log(err);
-    // })
+    wx.cloud.callFunction({
+      name: "goods",
+      data: {
+        action: "getData"
+      }
+    }).then(res => {
+      console.log(res);
+      this.setData({
+        goodsData: res.result.data
+      })
+    }).catch(err => {
+      console.log(err);
+    })
   },
 
   goDetail: (e) => {
