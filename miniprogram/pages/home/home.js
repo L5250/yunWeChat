@@ -4,20 +4,20 @@ Page({
     goodsData: [],
   },
   onLoad: function () {
-    let data = []
-    for (let i = 0; i < 100; i++) {
-      data.push({
-        id: i,
-        name: i % 2 == 1 ? "namenamenamenamenamenamenamenamenamenamenamenamenamenamenamenamenamename:" + i : i,
-        price: i * Math.floor(Math.random() * 10),
-        amount: i * Math.floor(Math.random() * 10),
-      })
-    }
-    console.log(data);
-    this.setData({
-      goodsData: data
-    })
 
+    this.getData()
+
+  },
+  onShow: function () {
+    // this.getData()
+  },
+  onPullDownRefresh: function () {
+    wx.startPullDownRefresh()
+    this.getData()
+  },
+
+  getData: function () {
+    console.log(111);
     // 获取数据
     wx.cloud.callFunction({
       name: "goods",

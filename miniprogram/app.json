@@ -43,5 +43,6 @@
   "useExtendedLib": {
     "kbone": true,
     "weui": true
-  }
+  },
+  "enablePullDownRefresh":true
 }
