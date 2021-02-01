@@ -7,7 +7,8 @@
         <view wx:for="{{basicData}}" wx:key="url" class="box_item" hover-class="box_item_hover" bindtap="addGoods"
           data-url="{{item.url}}">
           <view class="box_item_btn">
-            <image class="icon" src="{{item.imgUrl}}"></image>
+            <!-- <image class="icon" src="{{item.imgUrl}}"></image> -->
+            <mp-icon type="{{item.type}}" icon="{{item.icon}}" color="{{item.color}}" size="{{25}}"></mp-icon>
             <text class="title_font">{{item.name}}</text>
           </view>
         </view>

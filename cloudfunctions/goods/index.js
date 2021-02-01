@@ -1,9 +1,7 @@
 // 云函数入口文件
 const cloud = require('wx-server-sdk')
-const fs = require('fs')
-const path = require('path')
 cloud.init({
-  env: 'remax-yun-8gfmfl7b4ebb2253',
+  env: "remax-yun-8gfmfl7b4ebb2253"
 })
 
 const wxContext = cloud.getWXContext()
@@ -17,6 +15,9 @@ exports.main = async (event, context) => {
   switch (event.action) {
     case ("getData"): {
       return getGoods(event)
+    }
+    case ("getGoodsById"): {
+      return getGoodsById(event)
     }
     case ("add"): {
       return addGoods(event)
@@ -42,16 +43,42 @@ async function getGoods(event) {
   // 承载所有读操作的 promise 的数组
   const tasks = []
   for (let i = 0; i < batchTimes; i++) {
-    const promise = goods.skip(i * MAX_LIMIT).limit(MAX_LIMIT).get()
+    const promise = goods.skip(i * MAX_LIMIT).limit(MAX_LIMIT).orderBy('createDate', 'desc').get()
     tasks.push(promise)
   }
   // 等待所有
   return (await Promise.all(tasks)).reduce((acc, cur) => {
     return {
       data: acc.data.concat(cur.data),
-      errMsg: acc.errMsg,
+      message: acc.errMsg,
     }
   })
+}
+
+//获取单条明细数据
+async function getGoodsById(event) {
+  const promise = goods.doc(event.id).get()
+  console.log(promise);
+  return (await promise
+    .then(res => {
+      return {
+        data: res.data
+      }
+    })
+    .catch(err => {
+      return {
+        data: [],
+        message: "获取商品明细失败！"
+      }
+    }))
+
+  // return await new Promise(() => {
+  //   goods.doc(event.id).get().then(r => {
+  //     res({
+  //       data: r.data
+  //     })
+  //   })
+  // })
 }
 //新增
 async function addGoods(event) {

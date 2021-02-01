@@ -1,5 +1,8 @@
+<view class="pyg_index">
+  <SearchInput></SearchInput>
+</view>
 <view class="home">
-  <view wx:for="{{goodsData}}" wx:key="id" data-id="{{item.id}}" bindtap="goDetail" class="goods">
+  <view wx:for="{{goodsData}}" wx:key="_id" data-id="{{item._id}}" bindtap="goDetail" class="goods">
     <view class="layout home_layout">
       <view class="header"> </view>
       <view class="content">

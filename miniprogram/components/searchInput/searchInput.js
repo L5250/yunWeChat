@@ -1,6 +1,5 @@
-import CustomPage from '../../base/CustomPage'
-
-CustomPage({
+// miniprogram/components/searchInput.js
+Page({
 
   /**
    * 页面的初始数据

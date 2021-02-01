@@ -1,30 +1,27 @@
-Page({
+import CustomPage from '../../base/CustomPage'
+
+CustomPage({
   data: {
-    basicData: [
-      {
+    basicData: [{
         name: "新增商品",
         url: "addGoods",
-        imgUrl: "/images/svg/plus-square.svg"
+        icon: "add",
+        type: "field",
+        color: "#f40"
       },
       {
-        name: "新增商品",
-        url: "addGoods",
-        imgUrl: "/images/svg/plus-square.svg"
+        name: "商品维护",
+        url: "goodsSetting",
+        icon: "setting",
+        type: "outline",
+        color: "#f40"
       },
       {
-        name: "新增商品",
-        url: "addGoods",
-        imgUrl: "/images/svg/plus-square.svg"
-      },
-      {
-        name: "新增商品",
-        url: "addGoods",
-        imgUrl: "/images/svg/plus-square.svg"
-      },
-      {
-        name: "新增商品",
-        url: "addGoods",
-        imgUrl: "/images/svg/plus-square.svg"
+        name: "新增活动",
+        url: "addStar",
+        icon: "star",
+        type: "outline",
+        color: "#f40"
       }
     ]
   },

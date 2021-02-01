@@ -3,15 +3,16 @@
     "pages/home/home",
     "pages/detail/detail",
     "pages/shoppingCart/shoppingCart",
-    "pages/index/index",
-
     "pages/user/user",
-    "pages/addGoods/addGoods"
+    "pages/addGoods/addGoods",
+    "pages/goodsSetting/goodsSetting",
+    "pages/index/index"
   ],
-  "entryPagePath": "pages/addGoods/addGoods",
+  "entryPagePath": "pages/user/user",
   "tabBar": {
     "selectedColor": "#ff4400",
-    "list": [{
+    "list": [
+      {
         "pagePath": "pages/home/home",
         "iconPath": "/images/icon/home.png",
         "selectedIconPath": "/images/icon/home-1.png",
@@ -36,13 +37,13 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#eeeeee",
     "navigationBarTitleText": "云开发 QuickStart",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
   },
   "sitemapLocation": "sitemap.json",
   "style": "v2",
   "useExtendedLib": {
     "kbone": true,
     "weui": true
-  },
-  "enablePullDownRefresh":true
+  }
 }

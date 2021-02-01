@@ -1,5 +1,6 @@
-// pages/detail/detail.js
-Page({
+import CustomPage from '../../base/CustomPage'
+
+CustomPage({
 
   /**
    * 页面的初始数据
@@ -12,7 +13,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(options);
+    wx.cloud.callFunction({
+      name: "goods",
+      data: {
+        action: "getGoodsById",
+        id: options.id
+      }
+    }).then(res => {
+      console.log(res);
+    })
   },
 
   /**
